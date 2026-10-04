@@ -232,15 +232,15 @@ const dayData = {
 
 
     14: {
-        title: "The Northern Market",
+        title: "Did you say more houses?",
 
         description:
-            "Development begins in the northern part of the world.",
+            "Turns out, there's never enough buildings",
 
         events: [
-            "Established a new building area",
-            "Started connecting the northern area to the main settlement",
-            "Explored the surrounding terrain"
+            "More pavement was added",
+            "More vines now surround the bath house",
+            "The town center gets more houses, and detailed streets"
         ],
 
         locations: [],
@@ -250,15 +250,14 @@ const dayData = {
 
 
     15: {
-        title: "Connecting the World",
+        title: "Beat the game",
 
         description:
-            "Paths and infrastructure begin connecting previously separate areas.",
+            "Players had one pending mission to claim the world...",
 
         events: [
-            "Extended the main road",
-            "Improved transportation between settlements",
-            "Started a new construction project"
+            "Kill the end dragon",
+            "More houses"
         ],
 
         locations: [],
@@ -268,15 +267,16 @@ const dayData = {
 
 
     17: {
-        title: "The Northern Market",
+        title: "The Western Market",
 
         description:
             "The world has developed considerably since its first days.",
 
         events: [
-            "Expanded the main settlement",
-            "Completed several smaller structures",
-            "Continued exploring unexplored territory"
+            "Players worked together in a lush market square",
+            "A new player joined the world, and built something of their own",
+            "Buildings went up alongside with it",
+            "An apothecary was built"
         ],
 
         locations: [],
@@ -286,15 +286,14 @@ const dayData = {
 
 
     18: {
-        title: "New Horizons",
+        title: "Empty floors",
 
         description:
-            "Exploration leads to new opportunities beyond the established settlement.",
+            "Empty spaces lead to flourishing stores",
 
         events: [
-            "Explored a distant area",
-            "Discovered new resources",
-            "Marked a location for future development"
+            "Second floor of the apothecary was finished",
+            "New shops added, such as fish store, and book store",
         ],
 
         locations: [],
@@ -304,15 +303,15 @@ const dayData = {
 
 
     19: {
-        title: "Preparing for the Future",
+        title: "Industrial revolution",
 
         description:
-            "The settlement begins preparing for its next stage of development.",
+            "No more builder precariety! We want better tools",
 
         events: [
-            "Organized resources",
-            "Planned future construction",
-            "Improved existing infrastructure"
+            "Successfully fought against two raids to get discounted mending books",
+            "Built a nether connection between the Vale and the villagers",
+            "Built a Nether Hub"
         ],
 
         locations: [],
@@ -325,12 +324,11 @@ const dayData = {
         title: "Twenty Days Later",
 
         description:
-            "Twenty days of exploration and construction have transformed the world.",
+            "The underground stories take shape",
 
         events: [
-            "Reviewed the development of the settlement",
-            "Completed several long-term projects",
-            "Prepared for the next chapter"
+            "Built catacombs below the cathedral",
+            "Built stables in the lower floor",
         ],
 
         locations: [],
