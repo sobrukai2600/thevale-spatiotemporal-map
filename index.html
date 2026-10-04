@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Minecraft Spatiotemporal Map</title>
+
+    <!-- Leaflet CSS -->
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    >
+
+    <!-- Our CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="page">
+
+        <h1>Minecraft Spatiotemporal Map</h1>
+
+        <!-- Map navigation -->
+        <div id="mapControls">
+
+            <div id="dayLabel">Day 0</div>
+
+            <div id="timelineControls">
+
+                <button id="previousButton">◀ Previous</button>
+
+                <button id="playButton">▶ Play</button>
+
+                <button id="nextButton">Next ▶</button>
+
+            </div>
+
+        </div>
+
+        <!-- Map viewport -->
+        <div id="map-container">
+            <div id="map"></div>
+        </div>
+
+        <!-- Timeline -->
+        <div id="timeline">
+
+            <div id="timelineTrack"></div>
+
+            <input
+                type="range"
+                id="daySlider"
+                min="0"
+                step="1"
+                value="0"
+            >
+
+        </div>
+
+        <!-- Historical information -->
+        <section id="historyPanel">
+
+            <h2 id="historyTitle">The Beginning</h2>
+
+            <p id="historyDescription">
+                The world is created and exploration begins.
+            </p>
+
+            <div id="historyEvents">
+
+                <h3>Events</h3>
+
+                <ul id="eventList"></ul>
+
+            </div>
+
+            <p id="historyNotes"></p>
+
+        </section>   
+
+    </main>
+
+    <!-- Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- Historical data -->
+    <script src="data.js"></script>
+
+    <!-- Our JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>

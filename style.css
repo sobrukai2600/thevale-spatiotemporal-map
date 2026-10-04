@@ -1,0 +1,338 @@
+/* --------------------------------------------------
+   PAGE
+-------------------------------------------------- */
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.page {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+/* --------------------------------------------------
+   TITLE
+-------------------------------------------------- */
+
+h1 {
+    text-align: center;
+    margin: 20px 0;
+}
+
+
+/* --------------------------------------------------
+   MAP VIEWPORT
+-------------------------------------------------- */
+
+#map-container {
+    position: relative;
+
+    width: 100%;
+    height: 600px;
+
+    overflow: hidden;
+
+    box-sizing: border-box;
+}
+
+
+/* --------------------------------------------------
+   LEAFLET MAP
+-------------------------------------------------- */
+
+#map {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* --------------------------------------------------
+   TIMELINE
+-------------------------------------------------- */
+
+#timeline {
+    width: 90%;
+    max-width: 1000px;
+
+    margin: 30px auto;
+
+    position: relative;
+}
+
+
+/* Timeline line */
+
+#timelineTrack {
+    position: absolute;
+
+    top: 8px;
+    left: 0;
+    right: 0;
+
+    height: 4px;
+
+    background: #cccccc;
+
+    border-radius: 2px;
+
+    z-index: 4;
+
+    pointer-events: none;
+}
+
+
+/* Day markers */
+
+.timeline-marker {
+    position: absolute;
+
+    top: 1px;
+
+    width: 16px;
+    height: 16px;
+
+    transform: translateX(-50%);
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    border: 3px solid #333333;
+
+    box-sizing: border-box;
+
+    z-index: 5;
+
+    pointer-events: auto;
+
+    cursor: pointer;
+}
+
+
+/* Current day marker */
+
+.timeline-marker.active {
+    background: #333333;
+}
+
+
+/* Day labels */
+
+.timeline-day-label {
+    position: absolute;
+
+    top: 25px;
+
+    transform: translateX(-50%);
+
+    font-size: 12px;
+
+    white-space: nowrap;
+
+    z-index: 5;
+
+    pointer-events: auto;
+
+    cursor: pointer;
+}
+
+
+/* Invisible slider */
+
+#daySlider {
+    position: relative;
+
+    width: 100%;
+
+    margin: 0;
+
+    opacity: 0;
+
+    cursor: pointer;
+
+    z-index: 3;
+}
+
+
+/* --------------------------------------------------
+   MAP CONTROLS
+-------------------------------------------------- */
+
+#mapControls {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin: 0 auto 20px;
+}
+
+
+/* Current day */
+
+#dayLabel {
+    margin: 0;
+
+    font-size: 20px;
+
+    font-weight: bold;
+}
+
+
+/* Navigation buttons */
+
+#timelineControls {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+/* Button appearance */
+
+#timelineControls button {
+    padding: 9px 18px;
+
+    border: none;
+
+    border-radius: 999px;
+
+    background: #f2f2f2;
+
+    color: #333333;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 2px 6px rgba(0, 0, 0, 0.12);
+
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease,
+        background 0.15s ease;
+}
+
+
+/* Hover */
+
+#timelineControls button:hover:not(:disabled) {
+
+    background: #e8e8e8;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Press */
+
+#timelineControls button:active:not(:disabled) {
+
+    transform: translateY(0);
+
+    box-shadow:
+        0 2px 5px rgba(0, 0, 0, 0.12);
+}
+
+
+/* Disabled */
+
+#timelineControls button:disabled {
+
+    opacity: 0.4;
+
+    cursor: default;
+
+    box-shadow: none;
+}
+
+/* --------------------------------------------------
+   HISTORICAL INFORMATION
+-------------------------------------------------- */
+
+#historyPanel {
+    width: 90%;
+    max-width: 900px;
+
+    margin: 60px auto 30px;
+
+    box-sizing: border-box;
+
+    text-align: center;
+}
+
+
+#historyTitle {
+    margin: 0 0 10px;
+
+    font-size: 24px;
+}
+
+
+#historyDescription {
+    margin: 0 auto 20px;
+
+    max-width: 700px;
+
+    line-height: 1.6;
+}
+
+
+#historyEvents {
+    margin-top: 20px;
+}
+
+
+#historyEvents h3 {
+    margin-bottom: 8px;
+
+    font-size: 16px;
+}
+
+
+#eventList {
+    display: inline-block;
+
+    margin: 0;
+
+    padding-left: 20px;
+
+    text-align: left;
+
+    line-height: 1.7;
+}
+
+#historyNotes {
+    margin-top: 20px;
+
+    font-style: italic;
+}
+
+/* --------------------------------------------------
+   PIXEL-ART MAP RENDERING
+-------------------------------------------------- */
+
+.leaflet-image-layer {
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
