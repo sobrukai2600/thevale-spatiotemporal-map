@@ -24,8 +24,6 @@ const dayData = {
             "Old village ruins sit scattered, on top of a hill",
         ],
 
-        locations: [],
-
         notes: ""
     },
 
@@ -42,8 +40,6 @@ const dayData = {
             "Collected the first resources from nearby caves and trees",
             "All players built their individual houses",
         ],
-
-        locations: [],
 
         notes: ""
     },
@@ -62,8 +58,6 @@ const dayData = {
             "Some players explored beyond the mountains."
         ],
 
-        locations: [],
-
         notes: ""
     },
 
@@ -77,8 +71,6 @@ const dayData = {
         events: [
             "Resource gathering"
         ],
-
-        locations: [],
 
         notes: ""
     },
@@ -98,8 +90,6 @@ const dayData = {
 
         ],
 
-        locations: [],
-
         notes: ""
     },
 
@@ -114,7 +104,6 @@ const dayData = {
             "Players gathered to discuss the defining project of the town: the Cathedral"
         ],
 
-        locations: [],
 
         notes: ""
     },
@@ -133,7 +122,6 @@ const dayData = {
             "Cute stalls appear in the main plaza"
         ],
 
-        locations: [],
 
         notes: ""
     },
@@ -150,8 +138,6 @@ const dayData = {
             "Established a new path",
             "Discovered a new building site"
         ],
-
-        locations: [],
 
         notes: ""
     },
@@ -170,8 +156,6 @@ const dayData = {
             "A house in the center of town is replaced with a new fancy one."
         ],
 
-        locations: [],
-
         notes: ""
     },
 
@@ -188,8 +172,6 @@ const dayData = {
             "Wheat terraces were expanded and polished with more life"
         ],
 
-        locations: [],
-
         notes: ""
     },
 
@@ -203,8 +185,6 @@ const dayData = {
         events: [
             "Construction of the roman bath house"
         ],
-
-        locations: [],
 
         notes: ""
     },
@@ -225,8 +205,6 @@ const dayData = {
             "The western bridge is 'prettified' with a fancy flooring."
         ],
 
-        locations: [],
-
         notes: ""
     },
 
@@ -243,8 +221,6 @@ const dayData = {
             "The town center gets more houses, and detailed streets"
         ],
 
-        locations: [],
-
         notes: ""
     },
 
@@ -259,8 +235,6 @@ const dayData = {
             "Kill the end dragon",
             "More houses"
         ],
-
-        locations: [],
 
         notes: ""
     },
@@ -279,8 +253,6 @@ const dayData = {
             "An apothecary was built"
         ],
 
-        locations: [],
-
         notes: ""
     },
 
@@ -295,8 +267,6 @@ const dayData = {
             "Second floor of the apothecary was finished",
             "New shops added, such as fish store, and book store",
         ],
-
-        locations: [],
 
         notes: ""
     },
@@ -314,8 +284,6 @@ const dayData = {
             "Built a Nether Hub"
         ],
 
-        locations: [],
-
         notes: ""
     },
 
@@ -330,8 +298,6 @@ const dayData = {
             "Built catacombs below the cathedral",
             "Built stables in the lower floor",
         ],
-
-        locations: [],
 
         notes: ""
     }

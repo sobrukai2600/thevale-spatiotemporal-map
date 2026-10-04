@@ -20,6 +20,44 @@ const map = L.map('map', {
     dragging: true
 });
 
+// --------------------------------------------------
+// MINECRAFT COORDINATES
+// --------------------------------------------------
+
+const coordinateDisplay =
+    document.getElementById('coordinateDisplay');
+
+
+map.on('mousemove', function (event) {
+
+    // Convert Leaflet map position into
+    // image pixel coordinates
+
+    const pixelX = event.latlng.lng;
+    const pixelZ = event.latlng.lat;
+
+
+    // Convert image coordinates into
+    // Minecraft coordinates
+
+    const minecraftX =
+        Math.floor(mapOrigin.x + pixelX) +
+        coordinateOffset.x;
+
+    const minecraftZ =
+        Math.floor(
+            mapOrigin.z +
+            (imageHeight - 1) -
+            pixelZ
+        ) +
+        coordinateOffset.z;
+
+    // Display coordinates
+
+    coordinateDisplay.textContent =
+        `X: ${minecraftX}   Z: ${minecraftZ}`;
+
+});
 
 // --------------------------------------------------
 // AVAILABLE MAP DAYS
@@ -60,6 +98,12 @@ availableDays.forEach(day => {
 });
 
 // --------------------------------------------------
+// LOCATION MARKERS
+// --------------------------------------------------
+
+const locationMarkers = L.layerGroup().addTo(map);
+
+// --------------------------------------------------
 // INITIAL MAP
 // --------------------------------------------------
 
@@ -76,7 +120,6 @@ map.setView([520, 520], -1);
 
 // Center of the 1040 × 1040 image
 map.setView([520, 520], -1);
-
 
 // --------------------------------------------------
 // TIMELINE
@@ -203,6 +246,128 @@ function updateHistory() {
 }
 
 // --------------------------------------------------
+// UPDATE LOCATION MARKERS
+// --------------------------------------------------
+
+function updateLocationMarkers() {
+
+    // Remove existing markers
+
+    locationMarkers.clearLayers();
+
+
+    // Get all locations
+
+    const allLocations = locations;
+
+
+    // Check which locations exist
+    // on the current day
+
+    allLocations.forEach(location => {
+
+        const startsOnDay =
+            currentDay >= location.startDay;
+
+        const endsOnDay =
+            location.endDay === null ||
+            currentDay <= location.endDay;
+
+
+        // Don't display locations that
+        // don't exist yet or have already ended
+
+        if (!startsOnDay || !endsOnDay) {
+            return;
+        }
+
+
+        // Convert Minecraft coordinates
+        // into Leaflet map coordinates
+
+        const pixelX =
+            location.x - mapOrigin.x;
+
+        const pixelZ =
+            (mapOrigin.z + (imageHeight - 1))
+            - location.z
+            + coordinateOffset.z;
+
+
+        // Create marker
+        /*const marker = L.marker([
+            pixelZ,
+            pixelX
+        ]);*/
+
+        // Create custom marker icon
+        const locationIcon = L.divIcon({
+
+            className: '',
+
+            html: `
+                <div class="location-marker"></div>
+            `,
+
+            iconSize: [18, 18],
+
+            iconAnchor: [9, 9],
+
+            popupAnchor: [0, -12]
+
+        });
+
+
+        // Create marker
+
+        const marker = L.marker(
+            [
+                pixelZ,
+                pixelX
+            ],
+            {
+                icon: locationIcon
+            }
+        );
+
+
+        // Create popup
+        /*marker.bindPopup(`
+            <strong>${location.name}</strong>
+            <br>
+            ${location.description}
+            <br><br>
+            X: ${location.x}
+            <br>
+            Z: ${location.z}
+        `);*/
+        marker.bindPopup(`
+            <div class="location-popup">
+
+                <div class="location-popup-title">
+                    ${location.name}
+                </div>
+
+                <div class="location-popup-description">
+                    ${location.description}
+                </div>
+
+                <div class="location-popup-coordinates">
+                    X: ${location.x}
+                    &nbsp;&nbsp;
+                    Z: ${location.z}
+                </div>
+
+            </div>
+        `);
+
+        // Add marker
+        locationMarkers.addLayer(marker);
+
+    });
+}
+
+// --------------------------------------------------
 // UPDATE TIMELINE
 // --------------------------------------------------
 
@@ -211,9 +376,7 @@ function updateTimeline() {
     const markers =
         document.querySelectorAll('.timeline-marker');
 
-
     // Update active timeline marker
-
     markers.forEach((marker, index) => {
 
         marker.classList.toggle(
@@ -223,15 +386,14 @@ function updateTimeline() {
 
     });
 
-
     // Update current day
-
     dayLabel.textContent = `Day ${currentDay}`;
 
-
     // Update historical information
-
     updateHistory();
+
+    // Update location markers
+    updateLocationMarkers();
 
 }
 
