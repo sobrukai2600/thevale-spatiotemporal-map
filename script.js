@@ -246,6 +246,45 @@ function updateHistory() {
 }
 
 // --------------------------------------------------
+// GET LOCATION PHOTO
+// --------------------------------------------------
+
+function getLocationPhoto(location) {
+
+    // No photos available
+
+    if (!location.photos || location.photos.length === 0) {
+        return null;
+    }
+
+
+    // Find the latest photo whose day
+    // is not later than the current day
+
+    const availablePhotos =
+        location.photos.filter(photo =>
+            photo.day <= currentDay
+        );
+
+
+    // No photo exists yet for this day
+
+    if (availablePhotos.length === 0) {
+        return null;
+    }
+
+
+    // Get the most recent available photo
+
+    availablePhotos.sort((a, b) =>
+        b.day - a.day
+    );
+
+
+    return availablePhotos[0];
+}
+
+// --------------------------------------------------
 // UPDATE LOCATION MARKERS
 // --------------------------------------------------
 
@@ -340,7 +379,7 @@ function updateLocationMarkers() {
             X: ${location.x}
             <br>
             Z: ${location.z}
-        `);*/
+        `);
         marker.bindPopup(`
             <div class="location-popup">
 
@@ -351,6 +390,48 @@ function updateLocationMarkers() {
                 <div class="location-popup-description">
                     ${location.description}
                 </div>
+
+                <div class="location-popup-coordinates">
+                    X: ${location.x}
+                    &nbsp;&nbsp;
+                    Z: ${location.z}
+                </div>
+
+            </div>
+        `);*/
+
+        // Get the appropriate photo for the current day
+        const currentPhoto =
+            getLocationPhoto(location);
+
+
+        // Build photo HTML
+
+        const photoHTML = currentPhoto
+            ? `
+                <img
+                    class="location-popup-image"
+                    src="${currentPhoto.image}"
+                    alt="${location.name}"
+                >
+            `
+            : '';
+
+
+        // Create popup
+
+        marker.bindPopup(`
+            <div class="location-popup">
+
+                <div class="location-popup-title">
+                    ${location.name}
+                </div>
+
+                <div class="location-popup-description">
+                    ${location.description}
+                </div>
+
+                ${photoHTML}
 
                 <div class="location-popup-coordinates">
                     X: ${location.x}

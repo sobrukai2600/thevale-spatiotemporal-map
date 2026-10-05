@@ -37,10 +37,186 @@ const coordinateOffset = {
 const locations = [
 
     {
+        name: "Shitta",
+
+        x: 41.5,
+        z: -240.5,
+
+        startDay: 1,
+        endDay: null,
+
+        description:
+            "Primary needs first",
+
+        photos: [
+        {
+            day: 1,
+            image: "location-images/LOC_D1_Shitta.png"
+        }
+        ]
+    },
+    {
+        name: "S's house",
+
+        x: 47.5,
+        z: -258.5,
+
+        startDay: 1,
+        endDay: null,
+
+        description:
+            "Known for the lavish copper roof",
+
+        photos: [
+        {
+            day: 1,
+            image: "location-images/LOC_D1_SHouse.png"
+        }
+        ]
+    },
+    {
+        name: "N's house",
+
+        x: 41,
+        z: -256,
+
+        startDay: 4,
+        endDay: null,
+
+        description:
+            "The plebs sit lower"
+    },
+    {
+        name: "L's house",
+
+        x: 54,
+        z: -247,
+
+        startDay: 1,
+        endDay: 8,
+
+        description:
+            "Had to be right in front of someone else's entrance",
+        
+        photos: [
+        {
+            day: 1,
+            image: "location-images/LOC_D1_LHouse.png"
+        }
+        ]
+    },
+    {
+        name: "Café",
+
+        x: 54,
+        z: -247,
+
+        startDay: 9,
+        endDay: null,
+
+        description:
+            "A cosy place with suspicious trapdoors"
+    },
+    {
+        name: "F's house",
+
+        x: 69,
+        z: -240,
+
+        startDay: 1,
+        endDay: null,
+
+        description:
+            "Had to be the highest in the neighbourhood",
+        
+        photos: [
+        {
+            day: 1,
+            image: "location-images/LOC_D1_FHouse.png"
+        }
+        ]
+    },
+    {
+        name: "P's house",
+
+        x: 57,
+        z: -222,
+
+        startDay: 1,
+        endDay: null,
+
+        description:
+            "The one with weird split level",
+
+        photos: [
+        {
+            day: 1,
+            image: "location-images/LOC_D1_PHouse.png"
+        }
+        ]
+    },
+    {
+        name: "T's house",
+
+        x: 63,
+        z: -222,
+
+        startDay: 1,
+        endDay: null,
+
+        description:
+            "Always got to have a fancy bottom",
+        
+        photos: [
+        {
+            day: 1,
+            image: "location-images/LOC_D1_THouse.png"
+        }
+        ]
+    },
+    {
+        name: "M's house",
+
+        x: 70,
+        z: -222,
+
+        startDay: 1,
+        endDay: null,
+
+        description:
+            "Ambitious face lift",
+        
+        photos: [
+        {
+            day: 1,
+            image: "location-images/LOC_D1_MHouse.png"
+        }
+        ]
+    },
+    {
+        name: "Bamboo farm",
+
+        x: 88,
+        z: -221,
+
+        startDay: 1,
+        endDay: null,
+
+        description:
+            "What would we do without scaffolding",
+        
+        photos: [
+        {
+            day: 1,
+            image: "location-images/LOC_D1_BambooFarm.png"
+        }
+        ]
+    },
+    {
         name: "Storage house",
 
-        x: 50,
-        z: -237,
+        x: 51,
+        z: -236,
 
         startDay: 2,
         endDay: null,
@@ -50,7 +226,20 @@ const locations = [
     },
 
     {
-        name: "Widmill",
+        name: "Main square",
+
+        x: 42.5,
+        z: -236.5,
+
+        startDay: 2,
+        endDay: null,
+
+        description:
+            "At the intersection point between all the houses, the square became the unnofficial gathering place"
+    },
+
+    {
+        name: "Windmill",
 
         x: 2,
         z: -172,
@@ -59,7 +248,20 @@ const locations = [
         endDay: null,
 
         description:
-            "The Windmill of the wheat farm terraces"
+            ""
+    },
+
+    {
+        name: "Farm terraces",
+
+        x: 21,
+        z: -180,
+
+        startDay: 2,
+        endDay: null,
+
+        description:
+            ""
     }
 
 ];
