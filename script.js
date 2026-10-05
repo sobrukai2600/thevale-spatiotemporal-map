@@ -664,3 +664,8 @@ updateTimeline = function () {
 
 // Initial controls state
 updateControls();
+
+// Refresh Leaflet's layout after the map becomes visible again.
+document.addEventListener('mapviewshown', function () {
+    requestAnimationFrame(() => map.invalidateSize());
+});

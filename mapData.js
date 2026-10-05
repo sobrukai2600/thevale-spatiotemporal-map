@@ -36,7 +36,9 @@ const coordinateOffset = {
 
 const locations = [
 
+    //ARTIFACTS
     {
+        
         name: "Shitta",
 
         x: 41.5,
@@ -55,6 +57,22 @@ const locations = [
         }
         ]
     },
+    {
+        
+        name: "P's Settlement",
+
+        x: null,
+        z: null,
+
+        startDay: 1,
+        endDay: null,
+
+        description:
+            "Undisclosed location",
+
+    },
+
+    //HOUSES
     {
         name: "S's house",
 
@@ -106,18 +124,6 @@ const locations = [
         ]
     },
     {
-        name: "Café",
-
-        x: 54,
-        z: -247,
-
-        startDay: 9,
-        endDay: null,
-
-        description:
-            "A cosy place with suspicious trapdoors"
-    },
-    {
         name: "F's house",
 
         x: 69,
@@ -137,7 +143,7 @@ const locations = [
         ]
     },
     {
-        name: "P's house",
+        name: "C's house",
 
         x: 57,
         z: -222,
@@ -193,6 +199,9 @@ const locations = [
         }
         ]
     },
+
+
+    //LOCATIONS
     {
         name: "Bamboo farm",
 
@@ -237,7 +246,6 @@ const locations = [
         description:
             "At the intersection point between all the houses, the square became the unnofficial gathering place"
     },
-
     {
         name: "Windmill",
 
@@ -250,7 +258,6 @@ const locations = [
         description:
             ""
     },
-
     {
         name: "Farm terraces",
 
@@ -262,6 +269,18 @@ const locations = [
 
         description:
             ""
-    }
+    },
+    {
+        name: "Café",
+
+        x: 54,
+        z: -247,
+
+        startDay: 9,
+        endDay: null,
+
+        description:
+            "A cosy place with suspicious trapdoors"
+    },
 
 ];

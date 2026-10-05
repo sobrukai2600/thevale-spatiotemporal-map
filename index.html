@@ -21,70 +21,101 @@
 
     <main class="page">
 
-        <h1>Minecraft Spatiotemporal Map</h1>
-
-        <!-- Map navigation -->
-        <div id="mapControls">
-
-            <div id="dayLabel">Day 0</div>
-
-            <div id="timelineControls">
-
-                <button id="previousButton">◀ Previous</button>
-
-                <button id="playButton">▶ Play</button>
-
-                <button id="nextButton">Next ▶</button>
-
-            </div>
-
-        </div>
-
-        <!-- Map viewport -->
-         <div id="map-container">
-            <div id="map">
-
-                <div id="coordinateDisplay">
-                    X: -- &nbsp; Z: --
-                </div>
-             </div>
-        </div>
-
-        <!-- Timeline -->
-        <div id="timeline">
-
-            <div id="timelineTrack"></div>
-
-            <input
-                type="range"
-                id="daySlider"
-                min="0"
-                step="1"
-                value="0"
+        <header id="siteHeader">
+            <h1>Minecraft Spatiotemporal Map</h1>
+            <button
+                id="viewToggle"
+                type="button"
+                aria-label="Open database view"
+                title="Open database view"
+                aria-pressed="false"
             >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </header>
 
-        </div>
+        <section id="mapView">
+            <!-- Map navigation -->
+            <div id="mapControls">
 
-        <!-- Historical information -->
-        <section id="historyPanel">
+                <div id="dayLabel">Day 0</div>
 
-            <h2 id="historyTitle">The Beginning</h2>
+                <div id="timelineControls">
 
-            <p id="historyDescription">
-                The world is created and exploration begins.
-            </p>
+                    <button id="previousButton">◀ Previous</button>
 
-            <div id="historyEvents">
+                    <button id="playButton">▶ Play</button>
 
-                <h3>Events</h3>
+                    <button id="nextButton">Next ▶</button>
 
-                <ul id="eventList"></ul>
+                </div>
+            </div>
+
+            <!-- Map viewport -->
+            <div id="map-container">
+                <div id="map">
+
+                    <div id="coordinateDisplay">
+                        X: -- &nbsp; Z: --
+                    </div>
+                </div>
+            </div>
+
+            <!-- Timeline -->
+            <div id="timeline">
+
+                <div id="timelineTrack"></div>
+
+                <input
+                    type="range"
+                    id="daySlider"
+                    min="0"
+                    step="1"
+                    value="0"
+                >
 
             </div>
 
-            <p id="historyNotes"></p>
+            <!-- Historical information -->
+            <section id="historyPanel">
 
-        </section>   
+                <h2 id="historyTitle">The Beginning</h2>
+
+                <p id="historyDescription">
+                    The world is created and exploration begins.
+                </p>
+
+                <div id="historyEvents">
+
+                    <h3>Events</h3>
+
+                    <ul id="eventList"></ul>
+
+                </div>
+
+                <p id="historyNotes"></p>
+
+            </section>
+        </section>
+
+        <section id="databaseView" hidden>
+            <div class="database-header">
+                <h2>Location database</h2>
+                <p>Browse every location recorded in the Vale.</p>
+                <label class="location-sort-control">
+                    Sort by
+                    <select id="locationSort">
+                        <option value="name-asc">Name (A–Z)</option>
+                        <option value="name-desc">Name (Z–A)</option>
+                        <option value="day-asc">Day (oldest first)</option>
+                        <option value="day-desc">Day (newest first)</option>
+                    </select>
+                </label>
+            </div>
+            <div id="locationGallery" class="location-gallery"></div>
+        </section>
 
     </main>
 
@@ -99,6 +130,7 @@
 
     <!-- Our JavaScript -->
     <script src="script.js?v=1.1"></script>
+    <script src="database.js?v=1.0"></script>
 
 </body>
 </html>
