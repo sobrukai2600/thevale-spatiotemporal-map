@@ -51,8 +51,16 @@ function renderLocationGallery() {
         const dayLabel = document.createElement('span');
         dayLabel.className = 'location-card-day';
 
+        const coordinates = document.createElement('div');
+        coordinates.className = 'location-card-coordinates';
+
         const updatePhoto = () => {
             const photo = photos[photoIndex];
+            const coordinateDay = photo
+                ? photo.day
+                : location.startDay;
+            const currentCoordinates =
+                getLocationCoordinates(location, coordinateDay);
 
             if (photo) {
                 image.src = photo.image;
@@ -66,6 +74,10 @@ function renderLocationGallery() {
                 placeholder.hidden = false;
                 dayLabel.textContent = `From day ${location.startDay}`;
             }
+
+            coordinates.textContent = currentCoordinates
+                ? `X: ${currentCoordinates.x}   Z: ${currentCoordinates.z}`
+                : 'Coordinates unavailable';
         };
 
         if (photos.length > 0) {
@@ -119,10 +131,6 @@ function renderLocationGallery() {
         description.className = 'location-card-description';
         description.textContent =
             location.description || 'No description available.';
-
-        const coordinates = document.createElement('div');
-        coordinates.className = 'location-card-coordinates';
-        coordinates.textContent = `X: ${location.x}   Z: ${location.z}`;
 
         content.append(title, description, coordinates);
         card.append(photoArea, content);

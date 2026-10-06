@@ -246,6 +246,24 @@ function updateHistory() {
 }
 
 // --------------------------------------------------
+// GET LOCATION COORDINATES
+// --------------------------------------------------
+
+function getLocationCoordinates(location, day) {
+
+    const coordinateHistory = [...(location.coordinates || [])]
+        .filter(coordinates => coordinates.day <= day)
+        .sort((a, b) => b.day - a.day);
+    const coordinates = coordinateHistory[0] || location;
+
+    if (!Number.isFinite(coordinates.x) || !Number.isFinite(coordinates.z)) {
+        return null;
+    }
+
+    return coordinates;
+}
+
+// --------------------------------------------------
 // GET LOCATION PHOTO
 // --------------------------------------------------
 
@@ -320,16 +338,23 @@ function updateLocationMarkers() {
             return;
         }
 
+        const coordinates =
+            getLocationCoordinates(location, currentDay);
+
+        if (!coordinates) {
+            return;
+        }
+
 
         // Convert Minecraft coordinates
         // into Leaflet map coordinates
 
         const pixelX =
-            location.x - mapOrigin.x;
+            coordinates.x - mapOrigin.x;
 
         const pixelZ =
             (mapOrigin.z + (imageHeight - 1))
-            - location.z
+            - coordinates.z
             + coordinateOffset.z;
 
 
@@ -392,9 +417,9 @@ function updateLocationMarkers() {
                 </div>
 
                 <div class="location-popup-coordinates">
-                    X: ${location.x}
+                    X: ${coordinates.x}
                     &nbsp;&nbsp;
-                    Z: ${location.z}
+                    Z: ${coordinates.z}
                 </div>
 
             </div>
