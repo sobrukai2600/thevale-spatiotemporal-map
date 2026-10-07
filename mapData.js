@@ -60,11 +60,11 @@ const locations = [
         photos: [
         {
             day: 1,
-            image: "location-images/LOC_D1_Shitta.png"
+            image: "location-images/loc-D1/LOC_D1_Shitta.png"
         },
         {
             day: 2,
-            image: "location-images/LOC_D2_Shitta.png"
+            image: "location-images/loc-D2/LOC_D2_Shitta.png"
         }
         ]
     },    
@@ -88,11 +88,11 @@ const locations = [
         photos: [
         {
             day: 1,
-            image: "location-images/LOC_D1_JobBoard.png"
+            image: "location-images/loc-D1/LOC_D1_JobBoard.png"
         },
         {
             day: 2,
-            image: "location-images/LOC_D2_JobBoard.png"
+            image: "location-images/loc-D2/LOC_D2_JobBoard.png"
         }
         ]
     },
@@ -113,7 +113,7 @@ const locations = [
         photos: [
         {
             day: 3,
-            image: "location-images/LOC_D3_AHead.png"
+            image: "location-images/loc-D3/LOC_D3_AHead.png"
         }
         ]
     },
@@ -149,7 +149,7 @@ const locations = [
         photos: [
         {
             day: 1,
-            image: "location-images/LOC_D1_SHouse.png"
+            image: "location-images/loc-D1/LOC_D1_SHouse.png"
         }
         ]
     },
@@ -168,7 +168,7 @@ const locations = [
         photos: [
         {
             day: 2,
-            image: "location-images/LOC_D2_NHouse.png"
+            image: "location-images/loc-D2/LOC_D2_NHouse.png"
         }
         ]
     },
@@ -187,7 +187,7 @@ const locations = [
         photos: [
         {
             day: 1,
-            image: "location-images/LOC_D1_LHouse.png"
+            image: "location-images/loc-D1/LOC_D1_LHouse.png"
         }
         ]
     },
@@ -206,7 +206,7 @@ const locations = [
         photos: [
         {
             day: 1,
-            image: "location-images/LOC_D1_FHouse.png"
+            image: "location-images/loc-D1/LOC_D1_FHouse.png"
         }
         ]
     },
@@ -225,7 +225,7 @@ const locations = [
         photos: [
         {
             day: 1,
-            image: "location-images/LOC_D1_PHouse.png"
+            image: "location-images/loc-D1/LOC_D1_PHouse.png"
         }
         ]
     },
@@ -244,16 +244,16 @@ const locations = [
         photos: [
         {
             day: 1,
-            image: "location-images/LOC_D1_THouse.png"
+            image: "location-images/loc-D1/LOC_D1_THouse.png"
         },
         {
             day: 2,
-            image: "location-images/LOC_D2_THouse.png"
+            image: "location-images/loc-D2/LOC_D2_THouse.png"
         }
         ]
     },
     {
-        name: "M's house",
+        name: "M's 'haus'",
 
         x: 70,
         z: -222,
@@ -267,7 +267,7 @@ const locations = [
         photos: [
         {
             day: 1,
-            image: "location-images/LOC_D1_MHouse.png"
+            image: "location-images/loc-D1/LOC_D1_MHouse.png"
         }
         ]
     },
@@ -281,12 +281,12 @@ const locations = [
         endDay: null,
 
         description:
-            "",
+            "Some say suspicious activities and entities roam around its basement...",
 
         photos: [
         {
             day: 4,
-            image: "location-images/LOC_D4_AHouse.png"
+            image: "location-images/loc-D4/LOC_D4_AHouse.png"
         }
         ]
     },
@@ -308,7 +308,7 @@ const locations = [
         photos: [
         {
             day: 1,
-            image: "location-images/LOC_D1_BambooFarm.png"
+            image: "location-images/loc-D1/LOC_D1_BambooFarm.png"
         }
         ]
     },
@@ -327,7 +327,7 @@ const locations = [
         photos: [
         {
             day: 2,
-            image: "location-images/LOC_D2_CommunityStorage.png"
+            image: "location-images/loc-D2/LOC_D2_CommunityStorage.png"
         }
         ]
     },
@@ -347,15 +347,15 @@ const locations = [
         photos: [
         {
             day: 2,
-            image: "location-images/LOC_D2_MainSquare.png"
+            image: "location-images/loc-D2/LOC_D2_MainSquare.png"
         },
         {
             day: 6,
-            image: "location-images/LOC_D6_MainSquare.png"
+            image: "location-images/loc-D6/LOC_D6_MainSquare.png"
         },
         {
             day: 7,
-            image: "location-images/LOC_D7_MainSquare.png"
+            image: "location-images/loc-D7/LOC_D7_MainSquare.png"
         }        
         ]
     },
@@ -373,7 +373,7 @@ const locations = [
         photos: [
         {
             day: 2,
-            image: "location-images/LOC_D2_Windmill.png"
+            image: "location-images/loc-D2/LOC_D2_Windmill.png"
         }
         ]
     },
@@ -392,12 +392,16 @@ const locations = [
         photos: [
         {
             day: 2, 
-            image: "location-images/LOC_D2_WheatTerraces.png"
+            image: "location-images/loc-D2/LOC_D2_WheatTerraces.png"
         },
         {
             day: 7, 
-            image: "location-images/LOC_D7_WheatTerraces.png"
-        }        
+            image: "location-images/loc-D7/LOC_D7_WheatTerraces.png"
+        },
+        {
+            day: 10, 
+            image: "location-images/loc-D10/LOC_D10_WheatTerraces.png"
+        }           
         ]
     },
     {
@@ -415,12 +419,12 @@ const locations = [
         photos: [
         {
             day: 2, 
-            image: "location-images/LOC_D3_CommunalEnchant.png"
+            image: "location-images/loc-D3/LOC_D3_CommunalEnchant.png"
         }
         ]
     },
     {
-        name: "Clock House",
+        name: "Vallian Clockworks",
 
         x: 56,
         z: -236.5,
@@ -433,7 +437,7 @@ const locations = [
         photos: [
         {
             day: 4,     
-            image: "location-images/LOC_D4_ClockHouse.png"
+            image: "location-images/loc-D4/LOC_D4_ClockHouse.png"
         }
         ]
     },
@@ -451,7 +455,7 @@ const locations = [
         photos: [
         {
             day: 4,     
-            image: "location-images/LOC_D4_Library.png"
+            image: "location-images/loc-D4/LOC_D4_Library.png"
         }
         ]
     },
@@ -469,7 +473,7 @@ const locations = [
         photos: [
         {
             day: 4,     
-            image: "location-images/LOC_D4_NetherHub.png"
+            image: "location-images/loc-D4/LOC_D4_NetherHub.png"
         }
         ]
     },
@@ -487,7 +491,7 @@ const locations = [
         photos: [
         {
             day: 4,     
-            image: "location-images/LOC_D4_OrgWoodShop.png"
+            image: "location-images/loc-D4/LOC_D4_OrgWoodShop.png"
         }
         ]
     },
@@ -505,7 +509,7 @@ const locations = [
         photos: [
         {
             day: 4,     
-            image: "location-images/LOC_D4_Pub.png"
+            image: "location-images/loc-D4/LOC_D4_Pub.png"
         }
         ]
     },
@@ -523,11 +527,11 @@ const locations = [
         photos: [
         {
             day: 4,     
-            image: "location-images/LOC_D4_TheGrotto.png"
+            image: "location-images/loc-D4/LOC_D4_TheGrotto.png"
         },        
         {
             day: 4,     
-            image: "location-images/LOC_D4_TheGrotto_2.png"
+            image: "location-images/loc-D4/LOC_D4_TheGrotto_2.png"
         }
         ]
     },
@@ -545,11 +549,11 @@ const locations = [
         photos: [
         {
             day: 6,     
-            image: "location-images/LOC_D6_Cathedral.png"
+            image: "location-images/loc-D6/LOC_D6_Cathedral.png"
         },
         {
             day: 7,     
-            image: "location-images/LOC_D7_Cathedral.png"
+            image: "location-images/loc-D7/LOC_D7_Cathedral.png"
         }
         ]
     },
@@ -568,15 +572,15 @@ const locations = [
         photos: [
         {
             day: 6,     
-            image: "location-images/LOC_D6_CustomsHouse.png"
+            image: "location-images/loc-D6/LOC_D6_CustomsHouse.png"
         },
         {
             day: 7,     
-            image: "location-images/LOC_D7_CustomsHouse.png"
+            image: "location-images/loc-D7/LOC_D7_CustomsHouse.png"
         },
         {
             day: 7,     
-            image: "location-images/LOC_D7_CustomsHouse_2.png"
+            image: "location-images/loc-D7/LOC_D7_CustomsHouse_2.png"
         }
         ]
     },
@@ -595,12 +599,12 @@ const locations = [
         photos: [
         {
             day: 7,     
-            image: "location-images/LOC_D7_PotionShop.png"
+            image: "location-images/loc-D7/LOC_D7_PotionShop.png"
         }
         ]
     },
     {
-        name: "Skeleton Spawner",
+        name: "Crypt",
 
         x: 36.5,
         z: -332.5,
@@ -609,31 +613,136 @@ const locations = [
         endDay: null,
 
         description:
-            "",
+            "A mysterious ruined house underground chambers filled with skeletal remains. Functionlly, it contains the skeleton spawner for XP farming.",
 
         photos: [
         {
             day: 7,     
-            image: "location-images/LOC_D7_SkeletonSpawner.png"
+            image: "location-images/loc-D7/LOC_D7_SkeletonSpawner.png"
         },
         {
             day: 7,     
-            image: "location-images/LOC_D7_SkeletonSpawner_2.png"
+            image: "location-images/loc-D7/LOC_D7_SkeletonSpawner_2.png"
         }
         ]
     },
     {
-        name: "Café",
+        name: "Tuck'd Away Café",
 
-        x: 54,
-        z: -247,
+        x: 54.5,
+        z: -244,
 
         startDay: 9,
         endDay: null,
 
         description:
-            "A cosy place with suspicious trapdoors"
+            "A cosy place with suspicious trapdoors, and ridiculous prices. Sits in what was once L's House",
+        photos: [
+        {       
+        day: 9, 
+            image: "location-images/loc-D9/LOC_D9_TuckdAwayCafe.png"
+        },
+        {       
+        day: 9, 
+            image: "location-images/loc-D9/LOC_D9_TuckdAwayCafe_2.png"
+        }
+        ]
     },
+    {
+        name: "Old Mine Entrance",
+
+        x: 68,
+        z: -250,
+
+        startDay: 9,
+        endDay: null,
+
+        description:
+            "Entrance to the underground tunnels that traverse the town of the Vale",
+        photos: [
+        {
+            day: 9,     
+            image: "location-images/loc-D9/LOC_D9_OldMineEntrance.png"
+        }
+        ]
+    },
+    {
+        name: "[Hawthorn Alley n.67] Bakery",
+
+        x: 72,
+        z: -211,
+
+        startDay: 10,
+        endDay: null,
+
+        description:
+            "A small bakery tucked away in Hawthorn Alley, leaving a trail of delicious baked bread warmth. Conventienly connected to T's house through a backdoor",
+        photos: [
+        {
+            day: 10,     
+            image: "location-images/loc-D10/LOC_D10_Bakery.png"
+        }
+        ]
+    },
+    {
+        name: "Valedian Cheesemongers",
+
+        x: 65.5,
+        z: -207.5,
+
+        startDay: 10,
+        endDay: null,
+
+        description:
+            "The staple of the street, the cheese shop brings a variety of local and imported cheeses to the town.",
+        photos: [
+        {
+            day: 10,     
+            image: "location-images/loc-D10/LOC_D10_Cheesemonger.png"
+        }
+        ]
+    },
+    {
+        name: "[Hawthorn Alley n.3]",
+
+        x: 55,
+        z: -211,
+
+        startDay: 10,
+        endDay: null,
+
+        description:
+            "A modest house. A small trapdoor allows you to peek your feet into the Cheesemonger next door. Perhaps the cheese's flavorful smell is to thank for it.",
+        photos: [
+        {
+            day: 10,     
+            image: "location-images/loc-D10/LOC_D10_HawthornN3.png"
+        },
+        {
+            day: 10,     
+            image: "location-images/loc-D10/LOC_D10_HawthornN3_2.png"
+        }
+        ]
+    },
+    {
+        name: "Blacksmith",
+
+        x: 50.5,
+        z: -219.5,
+
+        startDay: 10,
+        endDay: null,
+
+        description:
+            "The one and only in town. It is said the owner carries the knowledge of far away desert lands",
+        photos: [
+        {
+            day: 10,     
+            image: "location-images/loc-D10/LOC_D10_Blacksmith.png"
+        }
+        ]
+    },
+
 
 
     //INFRASTRUCTURE
@@ -652,7 +761,7 @@ const locations = [
         photos: [
         {
             day: 4,     
-            image: "location-images/LOC_D4_DiagonalBridge.png"
+            image: "location-images/loc-D4/LOC_D4_DiagonalBridge.png"
         }
         ]
     },
@@ -671,7 +780,7 @@ const locations = [
         photos: [
         {
             day: 4,     
-            image: "location-images/LOC_D4_WestBridge.png"
+            image: "location-images/loc-D4/LOC_D4_WestBridge.png"
         }
         ]
     },

@@ -63,13 +63,14 @@ const dayData = {
 
 
     3: {
-        title: "Pause, before you move",
+        title: "The Deep Dark",
 
         description:
-            "Before growth, resources are needed",
+            "A resource-collecting expedition led the players to the Deep Dark cave, where they found something more than minerals...",
 
         events: [
-            "Resource gathering"
+            "Resource gathering",
+            "Fight the Warden(s) in the Deep Dark",
         ],
 
         notes: ""
