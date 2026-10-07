@@ -24,6 +24,7 @@ body {
 
 #siteHeader {
     position: relative;
+    padding-bottom: 28px;
 }
 
 /* --------------------------------------------------
@@ -58,11 +59,33 @@ h1 {
     cursor: pointer;
 }
 
+#locationMarkersToggle {
+    position: absolute;
+    top: 62px;
+    right: 20px;
+
+    padding: 8px 10px;
+
+    border: 0;
+    border-radius: 8px;
+    background: #f2f2f2;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+
+    color: #333333;
+    font: inherit;
+    cursor: pointer;
+}
+
 #viewToggle:hover {
     background: #e8e8e8;
 }
 
+#locationMarkersToggle:hover {
+    background: #e8e8e8;
+}
+
 #viewToggle:focus-visible,
+#locationMarkersToggle:focus-visible,
 .location-photo-arrow:focus-visible {
     outline: 3px solid #377a58;
     outline-offset: 2px;
@@ -241,6 +264,10 @@ h1 {
         right: 10px;
         width: 40px;
         height: 40px;
+    }
+
+    #locationMarkersToggle {
+        right: 10px;
     }
 }
 

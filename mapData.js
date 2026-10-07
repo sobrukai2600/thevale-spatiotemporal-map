@@ -348,7 +348,15 @@ const locations = [
         {
             day: 2,
             image: "location-images/LOC_D2_MainSquare.png"
-        }
+        },
+        {
+            day: 6,
+            image: "location-images/LOC_D6_MainSquare.png"
+        },
+        {
+            day: 7,
+            image: "location-images/LOC_D7_MainSquare.png"
+        }        
         ]
     },
     {
@@ -385,7 +393,11 @@ const locations = [
         {
             day: 2, 
             image: "location-images/LOC_D2_WheatTerraces.png"
-        }
+        },
+        {
+            day: 7, 
+            image: "location-images/LOC_D7_WheatTerraces.png"
+        }        
         ]
     },
     {
@@ -432,7 +444,7 @@ const locations = [
         z: -268.5,
 
         startDay: 4,
-        endDay: 6,
+        endDay: 5,
 
         description:
             "A restored ruin now promises to be a warm place for knowlege and culture. The building would soon be torn down, to accommodate the platform for the Cathedral.",
@@ -486,7 +498,7 @@ const locations = [
         z: -240,
 
         startDay: 4,
-        endDay: 6,
+        endDay: 5,
 
         description:
             "The building would soon be torn down, to accommodate the platform for the Cathedral.",
@@ -494,6 +506,119 @@ const locations = [
         {
             day: 4,     
             image: "location-images/LOC_D4_Pub.png"
+        }
+        ]
+    },
+    {
+        name: "The Grotto",
+
+        x: 44.5,
+        z: -220.5,
+
+        startDay: 4,
+        endDay: null,
+
+        description:
+            "A pirate cave hidden behind the waterfall...home to all the suspicious activities in the city, golden treasures, and a god old jug of beer.",
+        photos: [
+        {
+            day: 4,     
+            image: "location-images/LOC_D4_TheGrotto.png"
+        },        
+        {
+            day: 4,     
+            image: "location-images/LOC_D4_TheGrotto_2.png"
+        }
+        ]
+    },
+    {
+        name: "The Cathedral",
+
+        x: 93.5,
+        z: -245.5,
+
+        startDay: 6,
+        endDay: null,
+
+        description:
+            "A grand Cathedral...yet to be",
+        photos: [
+        {
+            day: 6,     
+            image: "location-images/LOC_D6_Cathedral.png"
+        },
+        {
+            day: 7,     
+            image: "location-images/LOC_D7_Cathedral.png"
+        }
+        ]
+    },
+    {
+        name: "Customs House",
+
+        x: 34.5,
+        z: -245.5,
+
+        startDay: 6,
+        endDay: null,
+
+        description:
+            "Right across the main bridge, ready to tax those visitors.",
+
+        photos: [
+        {
+            day: 6,     
+            image: "location-images/LOC_D6_CustomsHouse.png"
+        },
+        {
+            day: 7,     
+            image: "location-images/LOC_D7_CustomsHouse.png"
+        },
+        {
+            day: 7,     
+            image: "location-images/LOC_D7_CustomsHouse_2.png"
+        }
+        ]
+    },
+    {
+        name: "Potion Shop",
+
+        x: 51.5,
+        z: -292.5,
+
+        startDay: 7,
+        endDay: null,
+
+        description:
+            "",
+
+        photos: [
+        {
+            day: 7,     
+            image: "location-images/LOC_D7_PotionShop.png"
+        }
+        ]
+    },
+    {
+        name: "Skeleton Spawner",
+
+        x: 36.5,
+        z: -332.5,
+
+        startDay: 7,
+        endDay: null,
+
+        description:
+            "",
+
+        photos: [
+        {
+            day: 7,     
+            image: "location-images/LOC_D7_SkeletonSpawner.png"
+        },
+        {
+            day: 7,     
+            image: "location-images/LOC_D7_SkeletonSpawner_2.png"
         }
         ]
     },

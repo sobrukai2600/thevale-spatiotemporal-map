@@ -145,6 +145,7 @@ document.getElementById('locationSort').addEventListener(
 );
 
 const viewToggle = document.getElementById('viewToggle');
+const locationMarkersControl = document.getElementById('locationMarkersToggle');
 const mapView = document.getElementById('mapView');
 const databaseView = document.getElementById('databaseView');
 
@@ -154,6 +155,7 @@ viewToggle.addEventListener('click', function () {
 
     databaseView.hidden = !databaseIsVisible;
     mapView.hidden = databaseIsVisible;
+    locationMarkersControl.hidden = databaseIsVisible;
 
     viewToggle.setAttribute('aria-pressed', String(databaseIsVisible));
 

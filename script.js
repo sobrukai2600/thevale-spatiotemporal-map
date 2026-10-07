@@ -102,6 +102,28 @@ availableDays.forEach(day => {
 // --------------------------------------------------
 
 const locationMarkers = L.layerGroup().addTo(map);
+let areLocationMarkersVisible = true;
+const locationMarkersToggle =
+    document.getElementById('locationMarkersToggle');
+
+locationMarkersToggle.addEventListener('click', function () {
+    areLocationMarkersVisible = !areLocationMarkersVisible;
+    locationMarkersToggle.setAttribute(
+        'aria-pressed',
+        String(areLocationMarkersVisible)
+    );
+
+    const label = areLocationMarkersVisible
+        ? 'Hide location markers'
+        : 'Show location markers';
+    locationMarkersToggle.textContent = areLocationMarkersVisible
+        ? 'Hide locations'
+        : 'Show locations';
+    locationMarkersToggle.setAttribute('aria-label', label);
+    locationMarkersToggle.title = label;
+
+    updateLocationMarkers();
+});
 
 // --------------------------------------------------
 // INITIAL MAP
@@ -311,6 +333,10 @@ function updateLocationMarkers() {
     // Remove existing markers
 
     locationMarkers.clearLayers();
+
+    if (!areLocationMarkersVisible) {
+        return;
+    }
 
 
     // Get all locations
