@@ -211,15 +211,16 @@ const dayData = {
 
 
     14: {
-        title: "Did you say more houses?",
+        title: "Maintenance",
 
         description:
-            "Turns out, there's never enough buildings",
+            "Fixing and improving",
 
         events: [
             "More pavement was added",
-            "More vines now surround the bath house",
-            "The town center gets more houses, and detailed streets"
+            "More vines and flowers now surround the bath house",
+            "The roof of the Nether Hall gets finished",
+            "New plans go up in the docks"
         ],
 
         notes: ""
@@ -248,9 +249,10 @@ const dayData = {
             "The world has developed considerably since its first days.",
 
         events: [
-            "Players worked together in a lush market square",
-            "A new player joined the world, and built something of their own",
+            "Players worked together in a small yet bustling market square",
             "Buildings went up alongside with it",
+            "A new player joined the world, and built something of their own",
+            "A small bridge connects the center of town with a small peninsula",
             "An apothecary was built"
         ],
 

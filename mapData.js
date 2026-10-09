@@ -65,6 +65,14 @@ const locations = [
         {
             day: 2,
             image: "location-images/loc-D2/LOC_D2_Shitta.png"
+        },
+        {
+            day: 6,
+            image: "location-images/loc-D6/LOC_D6_Shitta.png"
+        },
+                {
+            day: 9,
+            image: "location-images/loc-D9/LOC_D9_Shitta.png"
         }
         ]
     },    
@@ -76,7 +84,9 @@ const locations = [
         z: -227.5,
 
         coordinates: [
-            { day: 2, x: 49.5, z: -243.5 }
+            { day: 2, x: 49.5, z: -243.5 },
+            { day: 9, x: null, z: null },
+            { day: 13, x: 39, z: -238 },
         ],
 
         startDay: 1,
@@ -93,6 +103,10 @@ const locations = [
         {
             day: 2,
             image: "location-images/loc-D2/LOC_D2_JobBoard.png"
+        },
+        {
+            day: 13,
+            image: "location-images/loc-D13/LOC_D13_JobBoard.png"
         }
         ]
     },
@@ -150,6 +164,10 @@ const locations = [
         {
             day: 1,
             image: "location-images/loc-D1/LOC_D1_SHouse.png"
+        },
+        {
+            day: 14,
+            image: "location-images/loc-D14/LOC_D14_SHouse.png"
         }
         ]
     },
@@ -322,12 +340,16 @@ const locations = [
         endDay: null,
 
         description:
-            "The communal resource storage room",
+            "The communal resource storage room. Underwent expansions to accomodate the increasing amount of resources. After the End Dragon was killed, players displayed its head proudly facing the square.",
         
         photos: [
         {
             day: 2,
             image: "location-images/loc-D2/LOC_D2_CommunityStorage.png"
+        },
+        {
+            day: 15,
+            image: "location-images/loc-D15/LOC_D15_CommunityStorage.png"
         }
         ]
     },
@@ -342,7 +364,7 @@ const locations = [
         endDay: null,
 
         description:
-            "At the intersection point between all the houses, the square became the unnofficial gathering place",
+            "At the intersection point between all the houses, the square became the unnofficial gathering place. It was paved with an adorned calcite floor. With time, it became decorated with colorful banners, and even a pink Candy Floss stall.",
         
         photos: [
         {
@@ -411,15 +433,23 @@ const locations = [
         z: -240.5,
 
         startDay: 3,
-        endDay: 3,
+        endDay: null,
 
+        coordinates: [
+            { day: 4, x: null, z: null },
+            { day: 7, x: 55.5, z: -244.5 },
+        ],
         description:
-            "",
+            "It fist was a simple pile of bookshelves in a corner of town. After the Cathedral's platform costruction, it was moved to an underground room accessible through the Community Storage. A ladder connects it to the Tuck'd Away Café that sits above.",
 
         photos: [
         {
             day: 2, 
             image: "location-images/loc-D3/LOC_D3_CommunalEnchant.png"
+        },
+        {
+            day: 7, 
+            image: "location-images/loc-D7/LOC_D7_CommunalEnchant.png"
         }
         ]
     },
@@ -460,7 +490,7 @@ const locations = [
         ]
     },
     {
-        name: "Nether Hub",
+        name: "[Wither Way n.105] Nether Hall",
 
         x: 31.5,
         z: -258.5,
@@ -469,11 +499,19 @@ const locations = [
         endDay: null,
 
         description:
-            "A restored ruin now accomodates a portal to the Nether. In later days, the building expands to be the town's staple entrance to the other dimension.",
+            "A restored ruin was used to accomodate a portal to the Nether. In later days, the building expands to be the town's staple entrance to the other dimension, and also names the street it sits on after the famous Nether's undead boss: The Wither.",
         photos: [
         {
             day: 4,     
             image: "location-images/loc-D4/LOC_D4_NetherHub.png"
+        },
+        {
+            day: 13,     
+            image: "location-images/loc-D13/LOC_D13_NetherHub.png"
+        },
+        {
+            day: 13,     
+            image: "location-images/loc-D13/LOC_D13_NetherHub_2.png"
         }
         ]
     },
@@ -545,7 +583,7 @@ const locations = [
         endDay: null,
 
         description:
-            "A grand Cathedral...yet to be",
+            "A grand Cathedral...yet to be, as part of an abbey complex.",
         photos: [
         {
             day: 6,     
@@ -600,6 +638,10 @@ const locations = [
         {
             day: 7,     
             image: "location-images/loc-D7/LOC_D7_PotionShop.png"
+        },
+        {
+            day: 13,     
+            image: "location-images/loc-D13/LOC_D13_PotionShop.png"
         }
         ]
     },
@@ -613,7 +655,7 @@ const locations = [
         endDay: null,
 
         description:
-            "A mysterious ruined house underground chambers filled with skeletal remains. Functionlly, it contains the skeleton spawner for XP farming.",
+            "A mysterious ruined building houses underground chambers filled with skeletal remains. Functionlly, it contains the skeleton spawner for XP farming.",
 
         photos: [
         {
@@ -739,6 +781,244 @@ const locations = [
         {
             day: 10,     
             image: "location-images/loc-D10/LOC_D10_Blacksmith.png"
+        },
+        {
+            day: 17,     
+            image: "location-images/loc-D17/LOC_D17_Blacksmith.png"
+        }
+        ]
+    },
+    {
+        name: "Roman Bath House",
+
+        x: -29.5,
+        z: -220.5,
+
+        startDay: 11,
+        endDay: null,
+
+        description:
+            "An old roman bath house. Despite its overgrown condition, and holes in the roof, it is still in use today. It has an ancient aqueduct system that brings water from the ravine right below. Truly healing waters.",
+        photos: [
+        {
+            day: 11,     
+            image: "location-images/loc-D11/LOC_D11_BathHouse.png"
+        },
+        {
+            day: 13,     
+            image: "location-images/loc-D13/LOC_D13_BathHouse.png"
+        },
+        {
+            day: 13,     
+            image: "location-images/loc-D13/LOC_D13_BathHouse_1.png"
+        },
+        {
+            day: 13,     
+            image: "location-images/loc-D13/LOC_D13_BathHouse_2.png"
+        },
+        {
+            day: 13,     
+            image: "location-images/loc-D13/LOC_D13_BathHouse_3.png"
+        },
+        {
+            day: 14,     
+            image: "location-images/loc-D14/LOC_D14_BathHouse.png"
+        }                           
+        ]
+    },
+    {
+        name: "[Elm Street n.235]  Visitors Center",
+
+        x: 32.5,
+        z: -254.5,
+
+        startDay: 13,
+        endDay: null,
+
+        description:
+            "Right next to the Customs House. A warm welcome...right after taxes.",
+        photos: [
+        {
+            day: 13,     
+            image: "location-images/loc-D13/LOC_D13_VisitorsCenter.png"
+        },
+        {
+            day: 18,     
+            image: "location-images/loc-D18/LOC_D18_VisitorsCenter.png"
+        }
+        ]
+    },
+    {
+        name: "Yellow House",
+
+        x: 41.5,
+        z: -214.5,
+
+        startDay: 13,
+        endDay: null,
+
+        description:
+            "A tall bright yellow house that constrasts the stone façades of the village, standing proud in High Street",
+        photos: [
+        {
+            day: 13,     
+            image: "location-images/loc-D13/LOC_D13_YellowHouse.png"
+        },
+        {
+            day: 14,     
+            image: "location-images/loc-D14/LOC_D14_YellowHouse.png"
+        }
+        ]
+    },
+    {
+        name: "A-Hoot Post",
+
+        x: 86.5,
+        z: -214.5,
+
+        startDay: 13,
+        endDay: null,
+
+        description:
+            "A post office managed my messenger owls",
+        photos: [
+        {
+            day: 13,     
+            image: "location-images/loc-D13/LOC_D13_AHootPost.png"
+        },
+        {
+            day: 13,     
+            image: "location-images/loc-D13/LOC_D13_AHootPost_1.png"
+        }
+        ]
+    },
+    {
+        name: "Town Market",
+
+        x: 16.5,
+        z: -264.5,
+
+        startDay: 17,
+        endDay: null,
+
+        description:
+            "A small yet sprawling square full of pop-up stalls, right under the shade ofan old birch tree",
+        photos: [
+        {
+            day: 17,     
+            image: "location-images/loc-D17/LOC_D17_TownMarket.png"
+        }
+        ]
+    },
+    {
+        name: "Old Book Shop",
+
+        x: 25.5,
+        z: -260.5,
+
+        startDay: 17,
+        endDay: null,
+
+        description:
+            "Right in the town market, sits a small and dim lit book shop, smelling of humidity and candle wax. The backdoors store secret passageways.",
+        photos: [
+        {
+            day: 17,     
+            image: "location-images/loc-D17/LOC_D17_OldBookShop.png"
+        }
+        ]
+    },
+    {
+        name: "Casino",
+
+        x: 34.5,
+        z: -274.5,
+
+        startDay: 17,
+        endDay: null,
+
+        description:
+            "Underground. Under construction",
+
+    },
+    {
+        name: "Apothecary",
+
+        x: 17.5,
+        z: -240.5,
+
+        startDay: 17,
+        endDay: null,
+
+        description:
+            "A store of great presence along the old Elm street, selling remedies to the citizens of the valley.",
+        photos: [
+        {
+            day: 17,     
+            image: "location-images/loc-D17/LOC_D17_Apothecary.png"
+        },
+        {
+            day: 18,     
+            image: "location-images/loc-D18/LOC_D18_Apothecary.png"
+        },
+        {
+            day: 18,     
+            image: "location-images/loc-D18/LOC_D18_Apothecary_1.png"
+        }
+
+        ]
+    },
+    {
+        name: "Fish Store",
+
+        x: 13.5,
+        z: -254.5,
+
+        startDay: 18,
+        endDay: null,
+
+        description:
+            "Set right near the river for the freshest fish in town. It also recieves supplies from P's Settlement.",
+        photos: [
+        {
+            day: 18,     
+            image: "location-images/loc-D18/LOC_D18_FishStore.png"
+        }
+        ]
+    },
+    {
+        name: "Catacombs",
+
+        x: 96.5,
+        z: -267.5,
+
+        startDay: 20,
+        endDay: null,
+
+        description:
+            "Right under the Cathedral's grounds, sitting deep in the underground, a chamber hosts eight tombs of who were said to be eminences and royalty of past days.",
+        photos: [
+        {
+            day: 20,     
+            image: "location-images/loc-D20/LOC_D20_Catacombs.png"
+        }
+        ]
+    },
+    {
+        name: "Stables",
+
+        x: 10.5,
+        z: -265.5,
+
+        startDay: 20,
+        endDay: null,
+
+        description:
+            "Right at the entrance from the west side, the stable provides a modest space to house a few horses for accessible adventure departures and arrivals.",
+        photos: [
+        {
+            day: 20,     
+            image: "location-images/loc-D20/LOC_D20_Stables.png"
         }
         ]
     },
@@ -766,7 +1046,7 @@ const locations = [
         ]
     },
     {
-        name: "West Bridge",
+        name: "Hepburn Bridge (old Elm)",
 
         x: -8.5,
         z: -245.5,
@@ -775,12 +1055,62 @@ const locations = [
         endDay: null,
 
         description:
-            "A grand connection to west lands, wide enough for horses, initially leading to the wild. It would later on become the connection way to the Bathouse",
+            "A grand connection to west lands, wide enough for horses, initially leading to the wild. It was named Elm Bridge after its construction, and would later on become the connection way to the Bath House. It was renamed to Hepburn",
 
         photos: [
         {
             day: 4,     
             image: "location-images/loc-D4/LOC_D4_WestBridge.png"
+        },
+        {
+            day: 13,     
+            image: "location-images/loc-D13/LOC_D13_WestBridge.png"
+        }
+        ]
+    },
+    {
+        name: "Docks",
+
+        x: 50,
+        z: -197.5,
+
+        startDay: 4,
+        endDay: null,
+
+        description:
+            "Stairs come down from High Street to the stone platform beside the river.",
+
+        photos: [
+        {
+            day: 13,     
+            image: "location-images/loc-D13/LOC_D13_Docks.png"
+        },
+        {
+            day: 14,     
+            image: "location-images/loc-D13/LOC_D14_Docks.png"
+        },
+        {
+            day: 15,     
+            image: "location-images/loc-D13/LOC_D15_Docks.png"
+        }
+        ]
+    },
+    {
+        name: "Hanging Bridge",
+
+        x: 9,
+        z: -291.5,
+
+        startDay: 4,
+        endDay: null,
+
+        description:
+            "A small wooden bridge connects the center of town with a small peninsula",
+
+        photos: [
+        {
+            day: 17,     
+            image: "location-images/loc-D17/LOC_D17_HangingBridge.png"
         }
         ]
     },
