@@ -59,33 +59,12 @@ h1 {
     cursor: pointer;
 }
 
-#locationMarkersToggle {
-    position: absolute;
-    top: 62px;
-    right: 20px;
-
-    padding: 8px 10px;
-
-    border: 0;
-    border-radius: 8px;
-    background: #f2f2f2;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
-
-    color: #333333;
-    font: inherit;
-    cursor: pointer;
-}
-
 #viewToggle:hover {
     background: #e8e8e8;
 }
 
-#locationMarkersToggle:hover {
-    background: #e8e8e8;
-}
-
 #viewToggle:focus-visible,
-#locationMarkersToggle:focus-visible,
+#mapLayerToggles button:focus-visible,
 .location-photo-arrow:focus-visible {
     outline: 3px solid #377a58;
     outline-offset: 2px;
@@ -269,9 +248,6 @@ h1 {
         height: 40px;
     }
 
-    #locationMarkersToggle {
-        right: 10px;
-    }
 }
 
 
@@ -423,6 +399,100 @@ h1 {
     gap: 12px;
 
     margin: 0 auto 20px;
+}
+
+#mapNavigationRow {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: center;
+    width: min(100%, 720px);
+}
+
+#timelineControls {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+#mapLayerToggles {
+    display: flex;
+    grid-column: 3;
+    grid-row: 1;
+    justify-self: end;
+    gap: 6px;
+}
+
+.map-layer-toggle {
+    display: grid;
+    width: 38px;
+    height: 38px;
+    padding: 8px;
+    place-items: center;
+
+    border: 0;
+    border-radius: 50%;
+    background: #f2f2f2;
+    color: #333333;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+}
+
+.map-layer-toggle:hover {
+    background: #e8e8e8;
+}
+
+.map-layer-toggle[aria-pressed="true"] {
+    background: #e3e9e5;
+}
+
+.map-layer-toggle svg {
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.8;
+}
+
+.map-layer-toggle svg text {
+    fill: currentColor;
+    stroke: none;
+}
+
+#mapLayerToggles button:focus-visible {
+    outline: 3px solid #377a58;
+    outline-offset: 2px;
+}
+
+@media (max-width: 560px) {
+    #mapNavigationRow {
+        grid-template-columns: minmax(0, 1fr) auto;
+        column-gap: 6px;
+    }
+
+    #timelineControls {
+        grid-column: 1;
+        grid-row: 1;
+        justify-self: center;
+        gap: 4px;
+    }
+
+    #mapLayerToggles {
+        grid-column: 2;
+        grid-row: 1;
+        gap: 4px;
+    }
+
+    #timelineControls button {
+        padding: 7px 9px;
+        font-size: 12px;
+    }
+
+    .map-layer-toggle {
+        width: 34px;
+        height: 34px;
+        padding: 6px;
+    }
 }
 
 
@@ -635,6 +705,40 @@ h1 {
     transition:
         transform 0.15s ease,
         box-shadow 0.15s ease;
+}
+
+.map-text-label-icon {
+    border: 0;
+    background: transparent;
+    pointer-events: none;
+}
+
+.map-text-label {
+    display: inline-block;
+    color: #ffffff;
+    font-weight: 600;
+    line-height: 1.2;
+    white-space: nowrap;
+    text-shadow:
+        -1px -1px 0 #222222,
+        1px -1px 0 #222222,
+        -1px 1px 0 #222222,
+        1px 1px 0 #222222,
+        0 2px 3px rgba(0, 0, 0, 0.9);
+    transform: translate(-50%, -50%) rotate(var(--map-label-angle));
+    transform-origin: center;
+}
+
+.map-text-label--small {
+    font-size: 12px;
+}
+
+.map-text-label--medium {
+    font-size: 15px;
+}
+
+.map-text-label--large {
+    font-size: 18px;
 }
 
 

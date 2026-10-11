@@ -14,7 +14,7 @@
     >
 
     <!-- Our CSS -->
-    <link rel="stylesheet" href="style.css?v=1.3">
+    <link rel="stylesheet" href="style.css?v=1.6">
 </head>
 
 <body>
@@ -34,15 +34,6 @@
                 <span></span>
                 <span></span>   
             </button>
-            <button
-                id="locationMarkersToggle"
-                type="button"
-                aria-label="Hide location markers"
-                title="Hide location markers"
-                aria-pressed="true"
-            >
-                Hide locations
-            </button>
         </header>
 
         <section id="mapView">
@@ -55,14 +46,43 @@
                 </div>
                 <div id="dayLabel">Day 0</div>
 
-                <div id="timelineControls">
+                <div id="mapNavigationRow">
+                    <div id="timelineControls">
 
-                    <button id="previousButton">◀ Previous</button>
+                        <button id="previousButton">◀ Previous</button>
 
-                    <button id="playButton">▶ Play</button>
+                        <button id="playButton">▶ Play</button>
 
-                    <button id="nextButton">Next ▶</button>
+                        <button id="nextButton">Next ▶</button>
 
+                    </div>
+                    <div id="mapLayerToggles">
+                        <button
+                            id="locationMarkersToggle"
+                            class="map-layer-toggle"
+                            type="button"
+                            aria-label="Hide location markers"
+                            title="Hide location markers"
+                            aria-pressed="true"
+                        >
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                        </button>
+                        <button
+                            id="mapTextToggle"
+                            class="map-layer-toggle"
+                            type="button"
+                            aria-label="Show map text labels"
+                            title="Show map text labels"
+                            aria-pressed="false"
+                        >
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M4 5h16M12 5v14M8 19h8"></path>
+                            </svg>
+                        </button>
+                    </div>
                 </div>
             </div>
 
@@ -142,7 +162,7 @@
     <script src="data.js"></script>
 
     <!-- Our JavaScript -->
-    <script src="script.js?v=1.2"></script>
+    <script src="script.js?v=1.6"></script>
     <script src="database.js?v=1.1"></script>
 
 </body>

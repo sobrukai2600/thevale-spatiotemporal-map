@@ -78,6 +78,9 @@ availableDays.forEach(day => {
 
     const image = new Image();
 
+    image.onerror = function () {
+        console.error(`Failed to preload map image for day ${day}.`);
+    };
     image.src =
         `maps/TheVale_map_overworld_D${day}.png`;
 
@@ -98,8 +101,80 @@ availableDays.forEach(day => {
 });
 
 // --------------------------------------------------
-// LOCATION MARKERS
+// MAP LABELS AND LOCATION MARKERS
 // --------------------------------------------------
+
+const mapTextPane = map.createPane('mapTextPane');
+mapTextPane.style.zIndex = '550';
+mapTextPane.style.pointerEvents = 'none';
+
+const mapTextLabelLayer = L.layerGroup().addTo(map);
+let mapTextLabelDefinitions = [];
+let areMapTextLabelsVisible = false;
+const mapTextToggleButton =
+    document.getElementById('mapTextToggle');
+
+mapTextToggleButton.addEventListener('click', function () {
+    areMapTextLabelsVisible = !areMapTextLabelsVisible;
+    mapTextToggleButton.setAttribute(
+        'aria-pressed',
+        String(areMapTextLabelsVisible)
+    );
+
+    const label = areMapTextLabelsVisible
+        ? 'Hide map text labels'
+        : 'Show map text labels';
+    mapTextToggleButton.setAttribute('aria-label', label);
+    mapTextToggleButton.title = label;
+
+    updateMapTextLabels();
+});
+
+fetch('mapTextLabels.json', { cache: 'no-store' })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(
+                `Unable to load mapTextLabels.json (${response.status})`
+            );
+        }
+        return response.json();
+    })
+    .then(data => {
+        if (!Array.isArray(data)) {
+            throw new TypeError(
+                'mapTextLabels.json must contain an array of label objects.'
+            );
+        }
+
+        data.forEach((entry, index) => {
+            if (
+                !entry ||
+                typeof entry.text !== 'string' ||
+                !entry.text.trim() ||
+                !Number.isInteger(entry.startDay) ||
+                (entry.endDay !== null &&
+                    (!Number.isInteger(entry.endDay) ||
+                        entry.endDay < entry.startDay)) ||
+                !Number.isFinite(entry.x) ||
+                !Number.isFinite(entry.z) ||
+                !Number.isFinite(entry.angle) ||
+                (entry.size !== undefined &&
+                    !['small', 'medium', 'large'].includes(entry.size))
+            ) {
+                throw new TypeError(
+                    `Invalid map text label at index ${index}; expected text, integer startDay, endDay (integer or null), finite x/z coordinates, finite angle, and optional size of small, medium, or large.`
+                );
+            }
+        });
+
+        mapTextLabelDefinitions = data;
+        updateMapTextLabels();
+    })
+    .catch(error => {
+        console.error('Map text labels could not be loaded.', error);
+        mapTextToggleButton.disabled = true;
+        mapTextToggleButton.title = 'Map text labels could not be loaded';
+    });
 
 const locationMarkers = L.layerGroup().addTo(map);
 let areLocationMarkersVisible = true;
@@ -116,11 +191,11 @@ locationMarkersToggle.addEventListener('click', function () {
     const label = areLocationMarkersVisible
         ? 'Hide location markers'
         : 'Show location markers';
-    locationMarkersToggle.textContent = areLocationMarkersVisible
-        ? 'Hide locations'
-        : 'Show locations';
     locationMarkersToggle.setAttribute('aria-label', label);
     locationMarkersToggle.title = label;
+    locationMarkersToggle.innerHTML = areLocationMarkersVisible
+        ? '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"></path><circle cx="12" cy="12" r="3"></circle></svg>'
+        : '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3l18 18M10.6 5.2A10.8 10.8 0 0 1 12 5c6.4 0 10 7 10 7a15 15 0 0 1-3 3.8M6.2 6.2C3.5 8 2 12 2 12s3.6 7 10 7a10 10 0 0 0 3.1-.5"></path><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"></path></svg>';
 
     updateLocationMarkers();
 });
@@ -131,7 +206,17 @@ locationMarkersToggle.addEventListener('click', function () {
 
 let currentIndex = 0;
 let currentDay = availableDays[currentIndex];
+let isChangingMap = true;
 
+maps[currentDay].once('load', function () {
+    isChangingMap = false;
+    updateControls();
+});
+maps[currentDay].once('error', function (event) {
+    console.error(`Failed to load map image for day ${currentDay}.`, event);
+    isChangingMap = false;
+    updateControls();
+});
 maps[currentDay].addTo(map);
 
 map.setView([520, 520], -1);
@@ -499,6 +584,57 @@ function updateLocationMarkers() {
     });
 }
 
+function escapeMapLabelText(text) {
+    return text.replace(/[&<>"']/g, character => ({
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#39;'
+    })[character]);
+}
+
+function updateMapTextLabels() {
+    mapTextLabelLayer.clearLayers();
+
+    if (!areMapTextLabelsVisible) {
+        return;
+    }
+
+    mapTextLabelDefinitions.forEach(entry => {
+        const startsOnDay = currentDay >= entry.startDay;
+        const endsOnDay =
+            entry.endDay === null || currentDay <= entry.endDay;
+
+        if (!startsOnDay || !endsOnDay) {
+            return;
+        }
+
+        const pixelX = entry.x - mapOrigin.x;
+        const pixelZ =
+            (mapOrigin.z + (imageHeight - 1))
+            - entry.z
+            + coordinateOffset.z;
+        const labelSize = entry.size || 'medium';
+        const icon = L.divIcon({
+            className: 'map-text-label-icon',
+            html: `<span class="map-text-label map-text-label--${labelSize}" style="--map-label-angle:${entry.angle}deg">${escapeMapLabelText(entry.text)}</span>`,
+            iconSize: [0, 0],
+            iconAnchor: [0, 0]
+        });
+
+        mapTextLabelLayer.addLayer(L.marker(
+            [pixelZ, pixelX],
+            {
+                pane: 'mapTextPane',
+                icon,
+                interactive: false,
+                keyboard: false
+            }
+        ));
+    });
+}
+
 // --------------------------------------------------
 // UPDATE TIMELINE
 // --------------------------------------------------
@@ -526,6 +662,7 @@ function updateTimeline() {
 
     // Update location markers
     updateLocationMarkers();
+    updateMapTextLabels();
 
 }
 
@@ -550,7 +687,11 @@ let playInterval = null;
 // CHANGE DAY
 // --------------------------------------------------
 
-function changeDay(newIndex) {
+async function changeDay(newIndex) {
+
+    if (isChangingMap) {
+        return;
+    }
 
     // Keep index inside available range
     if (newIndex < 0) {
@@ -570,27 +711,56 @@ function changeDay(newIndex) {
 
 
     const newDay = availableDays[newIndex];
+    const previousMap = maps[currentDay];
+    const nextMap = maps[newDay];
+
+    isChangingMap = true;
+    updateControls();
+
+    try {
+        const nextMapLoaded = await new Promise(resolve => {
+            const handleLoad = function () {
+                nextMap.off('error', handleError);
+                resolve(true);
+            };
+            const handleError = function (event) {
+                nextMap.off('load', handleLoad);
+                console.error(
+                    `Failed to load map image for day ${newDay}.`,
+                    event
+                );
+                resolve(false);
+            };
+
+            nextMap.once('load', handleLoad);
+            nextMap.once('error', handleError);
+
+            // Keep the current image visible until the new overlay has loaded.
+            nextMap.addTo(map);
+        });
+
+        if (!nextMapLoaded) {
+            nextMap.removeFrom(map);
+            return;
+        }
+
+        previousMap.removeFrom(map);
+
+        // Update state only after the new image is ready.
+        currentIndex = newIndex;
+        currentDay = newDay;
 
 
-    // Remove previous map
-    maps[currentDay].removeFrom(map);
+        // Update slider
+        slider.value = currentIndex;
 
 
-    // Add new map
-    maps[newDay].addTo(map);
-
-
-    // Update state
-    currentIndex = newIndex;
-    currentDay = newDay;
-
-
-    // Update slider
-    slider.value = currentIndex;
-
-
-    // Update timeline
-    updateTimeline();
+        // Update timeline
+        updateTimeline();
+    } finally {
+        isChangingMap = false;
+        updateControls();
+    }
 }
 
 
@@ -636,15 +806,19 @@ nextButton.addEventListener('click', function () {
 function updateControls() {
 
     // Previous button
-    previousButton.disabled = currentIndex === 0;
+    previousButton.disabled =
+        isChangingMap || currentIndex === 0;
 
 
     // Next button
     nextButton.disabled =
-        currentIndex === availableDays.length - 1;
+        isChangingMap || currentIndex === availableDays.length - 1;
+
+    slider.disabled = isChangingMap;
 
 
     // Play button
+    playButton.disabled = isChangingMap;
     playButton.textContent =
         isPlaying ? '❚❚ Pause' : '▶ Play';
 }

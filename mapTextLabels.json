@@ -1,0 +1,74 @@
+[
+  {
+    "text": "Old Town",
+    "size": "large",
+    "startDay": 0,
+    "endDay": null,
+    "x": 42,
+    "z": -279,
+    "angle": -20
+  },
+  {
+    "text": "Farm District",
+    "size": "large",
+    "startDay": 2,
+    "endDay": null,
+    "x": 15,
+    "z": -201,
+    "angle": 20
+  },
+{
+    "text": "Old mine city caves",
+    "size": "medium",
+    "startDay": 9,
+    "endDay": null,
+    "x": 80,
+    "z": -254,
+    "angle": 60
+  },
+  {
+    "text": "Elm bridge",
+    "size": "medium",
+    "startDay": 4,
+    "endDay": 16,
+    "x": 8,
+    "z": -245.5,
+    "angle": 0
+  },
+  {
+    "text": "Hepburn bridge",
+    "size": "medium",
+    "startDay": 17,
+    "endDay": null,
+    "x": 8,
+    "z": -245.5,
+    "angle": 0
+  },
+  {
+    "text": "Hawthorn Alley",
+    "size": "small",
+    "startDay": 10,
+    "endDay": null,
+    "x": 72,
+    "z": -213,
+    "angle": 0
+  },
+  {
+    "text": "Wither Way",
+    "size": "small",
+    "startDay": 13,
+    "endDay": null,
+    "x": 37,
+    "z": -261,
+    "angle": -90
+  },
+  {
+    "text": "High Street",
+    "size": "medium",
+    "startDay": 9,
+    "endDay": null,
+    "x": 66,
+    "z": -202,
+    "angle": 0
+  }
+]
